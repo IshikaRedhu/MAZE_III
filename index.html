@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title> 3D MAZE GAME</title>
+        <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="//cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js" target="_blank"></script>
+        <script src="//unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js" target="_blank"></script>
+        <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js" crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js" target="_blank"></script>
+        <script src="./app.js"></script>
+        <script src="./time.js"></script>
+
+    <body>
+        <a-scene id="maze" background="color:#808080">
+            <a-asset>
+                <a-asset-item id="maze-obj" src="./maze/tinker.obj"></a-asset-item>
+                <a-asset-item id="maze-mtl" src="./maze/obj.mtl"></a-asset-item>
+                <a-asset-item id="player-obj" src="./player/tinker.obj"></a-asset-item>
+                <a-asset-item id="player-mtl" src="./player/obj.mtl"></a-asset-item>
+            </a-asset>
+
+            <a-entity id="control" movement-controls="speed:0.08" position="0 0 0" rotation="0 0 0"  game timer_control="play">
+
+                <a-entity id="camera" camera position="-4 1 -45" look-controls="pointerLockEnabled: true" game>
+            <a-entity id="model2" obj-model="obj: #player-obj; mtl: #player-mtl" position="0.15 -0.3 -1" rotation="-90 270 90" scale="0.007 0.007 0.007"
+                >  </a-entity>
+    
+    <a-entity id="timer" position="0 5 -7" text="font:kelsonsans;align:center;width:10;color:black;value:00:00"></a-entity>
+           
+<a-entity id="text2" position="-8 5 -7" text="font:kelsonsans;align:center;width:7;color:black;value:NAVMESH IS NOT YET ADDED SO DON'T TRY TO CHEAT"></a-entity>
+            
+<a-entity id="text2" position="-8 3 -7" text="font:kelsonsans;align:center;width:8;color:black;value:BE HONEST !!"></a-entity>
+   
+                </a-entity>
+        </a-entity>
+          
+           <a-entity id="model1" obj-model="obj: #maze-obj; mtl: #maze-mtl"  position="0 0 -50" rotation="-90 270 0" scale="0.05 0.05 0.05"
+    ></a-entity>
+    <a-entity id="gameup" position="0 -2 -7" text="font:kelsonsans;align:center;width:20;color:black;bordercolor:lightblue;value:Oops! Try Again" visible="false"></a-entity>
+</a-entity>
+        
+        </a-entity>
+   
+         </a-scene>
+    </body>
+</html>
